@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+    <style>
+      .gallery{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+
+      let rootElement = document.querySelector("#root");
+
+      function Image({src}){
+        return <img src= {src} alt=""/>
+
+      }
+
+
+      let gallery = (
+       
+      <div className="gallery">
+    
+       <Image src="https://dummyimage.com/300" />
+       <Image src="https://dummyimage.com/300" />
+       <Image src="https://dummyimage.com/300" />
+       <Image src="https://dummyimage.com/300" />
+       <Image src="https://dummyimage.com/300" />
+        <Image src="https://dummyimage.com/300" />
+        <Image src="https://dummyimage.com/300" />
+       </div>
+      );
+
+
+      ReactDOM.createRoot(rootElement).render(gallery);
+    </script>
+  </body>
+</html>
